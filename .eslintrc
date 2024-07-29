@@ -1,0 +1,59 @@
+{
+	"root": true,
+
+	"env": { "browser": true, "es2020": true },
+
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:import/recommended",
+		"plugin:prettier/recommended"
+	],
+	"ignorePatterns": ["dist", ".eslintrc", "vite.config.ts", "tailwind.config.js", "commitlint.config.ts"],
+
+	"parser": "@typescript-eslint/parser",
+
+	"settings": {
+		"react": { "version": "18.2" },
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"],
+				"moduleDirectory": ["node_modules", "src/"]
+			},
+			"alias": {
+				"extensions": [".ts", ".tsx"],
+				"map": [["@", "./src"]]
+			}
+		}
+	},
+
+	"plugins": ["react-refresh", "import", "prettier"],
+
+	"rules": {
+		"import/no-unresolved": [2, { "caseSensitive": false }],
+		"react/jsx-no-target-blank": "off",
+		"react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
+
+		"no-useless-return": "error",
+		"arrow-body-style": ["error", "as-needed"],
+		"prefer-arrow-callback": "warn",
+
+		"max-len": ["error", { "code": 130 }],
+		"prefer-const": "warn",
+		"no-var": "error",
+
+		"no-duplicate-imports": "error",
+		"no-console": "warn",
+		"react/prop-types": "off",
+		"import/no-default-export": "warn",
+		"prettier/prettier": ["error", { "endOfLine": "auto" }],
+		"import/order": [
+			"warn",
+			{
+				"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+				"newlines-between": "always-and-inside-groups"
+			}
+		]
+	}
+}
