@@ -28,8 +28,11 @@
 		}
 	},
 
-	"plugins": ["react-refresh", "import", "prettier"],
-
+	"plugins": ["react-refresh", "import", "prettier", "simple-import-sort"],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": "latest"
+	},
 	"rules": {
 		"import/no-unresolved": [2, { "caseSensitive": false }],
 		"react/jsx-no-target-blank": "off",
@@ -48,12 +51,30 @@
 		"react/prop-types": "off",
 		"import/no-default-export": "warn",
 		"prettier/prettier": ["error", { "endOfLine": "auto" }],
-		"import/order": [
-			"warn",
-			{
-				"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-				"newlines-between": "always-and-inside-groups"
-			}
-		]
+
+		"simple-import-sort/imports": "warn",
+		"simple-import-sort/exports": "warn",
+		"import/first": "warn",
+		"import/newline-after-import": "warn",
+		"import/no-duplicates": "warn"
+		// "import/order": [
+		// 	"warn",
+		// 	{
+		// 		"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type", "object"],
+		// 		"newlines-between": "always-and-inside-groups",
+		// 		"alphabetize": {
+		// 			"order": "asc",
+		// 			"caseInsensitive": true
+		// 		}
+		// 		// "pathGroups": [
+		// 		// 	{
+		// 		// 		"pattern": "{.,..}/**/*.scss",
+		// 		// 		"group": "object",
+		// 		// 		"patternOptions": { "matchBase": true },
+		// 		// 		"position": "after"
+		// 		// 	}
+		// 		// ]
+		// 	}
+		// ]
 	}
 }

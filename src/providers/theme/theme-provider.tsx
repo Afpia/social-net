@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 import { ThemeContext } from './theme-context'
-
 import { Theme, ThemeProviderProps } from './types'
 
 export const ThemeProvider = ({ children, defaultTheme = 'system', storageKey = 'theme' }: ThemeProviderProps) => {

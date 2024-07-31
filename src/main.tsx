@@ -1,14 +1,15 @@
+import './assets/styles/global.css'
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { App } from './App'
-import { ThemeProvider } from './providers/theme-provider/theme-provider'
-import './assets/styles/global.css'
+import { Router } from './providers/router/Router'
+import { ThemeProvider } from './providers/theme/theme-provider'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<ThemeProvider>
-			<App />
+			<Router />
 		</ThemeProvider>
 	</React.StrictMode>
 )

@@ -1,4 +1,4 @@
-import { useTheme } from './providers/theme-provider/useTheme'
+import { useTheme } from './providers/theme'
 
 export const App = () => {
 	const { theme, setTheme } = useTheme()
