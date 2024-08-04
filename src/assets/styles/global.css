@@ -18,6 +18,9 @@
 }
 
 .dark {
-	background-color: rgb(53, 30, 30);
+	background-color: #242424;
 }
-
+.light {
+	background: rgba(255, 255, 255, 0.87);
+	color: #242424;
+}

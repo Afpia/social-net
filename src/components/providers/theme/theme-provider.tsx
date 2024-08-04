@@ -23,9 +23,9 @@ export const ThemeProvider = ({ children, defaultTheme = 'system', storageKey = 
 
 	const value = {
 		theme,
-		setTheme: (theme: Theme) => {
-			localStorage.setItem(storageKey, theme)
-			setTheme(theme)
+		setTheme: (changedTheme: Theme) => {
+			localStorage.setItem(storageKey, changedTheme)
+			setTheme(changedTheme)
 		}
 	}
 
