@@ -40,7 +40,6 @@
 		"react/prop-types": "off",
 		"react/button-has-type": "warn",
 		"react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
-
 		"no-useless-return": "error",
 		"arrow-body-style": ["warn", "as-needed"],
 		"prefer-arrow-callback": "warn",

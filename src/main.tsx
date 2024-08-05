@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import './firebase'
+
 import { Router } from './components/providers/router/Router'
 import { ThemeProvider } from './components/providers/theme/theme-provider'
 
