@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
+import { Button } from '@/UI/button/Button'
 
 export interface form {
 	email: string
@@ -27,18 +29,16 @@ export const LoginForm = () => {
 	}
 
 	const submit: SubmitHandler<form> = async data => {
-		console.log(data)
 		const auth = getAuth()
 		const response = await signInWithEmailAndPassword(auth, data.email, data.password)
+		// localStorage.setItem('user')
 		console.log(response)
+
 		authAccess = true
 		navigate('/', { replace: true })
 	}
-	const error: SubmitErrorHandler<form> = data => {
-		console.log(data)
-	}
 	return (
-		<form onSubmit={handleSubmit(submit, error)} className='flex flex-col items-center justify-center gap-4'>
+		<form onSubmit={handleSubmit(submit)} className='flex flex-col items-center justify-center gap-4'>
 			<input type='text' placeholder='Почта' className='w-48 p-2' {...register('email', { required: true })} />
 			<div className='relative'>
 				<input
@@ -53,9 +53,10 @@ export const LoginForm = () => {
 					<FaEyeSlash onClick={changeType} className='absolute right-3 top-2/4 -translate-y-1/2 cursor-pointer' />
 				)}
 			</div>
-			<button type='submit' className='w-48 bg-black p-2'>
+			<button type='submit' className='w-48 bg-red-900 p-2'>
 				Отправить
 			</button>
+			<Button className='bg-'>Отправить</Button>
 		</form>
 	)
 }

@@ -38,15 +38,4 @@ const router = createBrowserRouter([
 	}
 ])
 
-// const router = createBrowserRouter(
-// 	createRoutesFromElements(
-// 		<Route>
-// 			<Route element={<LayoutChat />}>
-// 				<Route path={ROUTES.MAIN} element={<Chat />} />
-// 			</Route>
-// 			<Route path='*' element={<NotFound />} />
-// 		</Route>
-// 	)
-// )
-
 export const Router = () => <RouterProvider router={router} />
