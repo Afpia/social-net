@@ -2,14 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: Manrope;
+	src: url(../fonts/Manrope-VariableFont_wght.ttf);
+}
+
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Manrope;
 	line-height: 1.5;
 	font-weight: 400;
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	background-color: #ffffff;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -18,9 +23,9 @@
 }
 
 .dark {
-	background-color: #242424;
+	background-color: #000000;
 }
 .light {
-	background: rgba(255, 255, 255, 0.87);
+	background: #fbfbfb;
 	color: #242424;
 }

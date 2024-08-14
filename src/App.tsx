@@ -1,6 +1,6 @@
 export const App = () => (
 	<>
-		<div className='font-bold text-white underline dark:text-yellow-500'>hello</div>
+		<div className='dark:text-yellow-500 font-bold text-white underline'>hello</div>
 		<h2></h2>
 	</>
 )
