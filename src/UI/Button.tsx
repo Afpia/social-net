@@ -5,6 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+	type?: 'submit'
 	loading?: boolean
 	children: ReactNode
 }
@@ -26,9 +27,9 @@ const buttonVariants = cva('', {
 })
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ children, variant, loading, className, ...props }, ref) => (
+	({ children, type, variant, loading, className, ...props }, ref) => (
 		<button
-			type='button'
+			type={type ? 'submit' : 'button'}
 			className={cn(buttonVariants({ variant, loading }), className)}
 			ref={ref}
 			disabled={loading}

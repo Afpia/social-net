@@ -9,7 +9,8 @@ export default {
 			'gray-dark': '#73787B',
 			'gray-light': '#EFF2F4',
 			white: '#fff',
-			black: '#000'
+			black: '#000',
+			red: '#E5252A'
 		},
 		fontFamily: {
 			sans: ['Manrope', 'sans-serif']
