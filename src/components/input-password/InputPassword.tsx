@@ -21,9 +21,9 @@ export const InputPassword = forwardRef<HTMLInputElement, InputProps>(({ classNa
 	}
 
 	return (
-		<div className='relative' ref={ref}>
-			<Input type={typeInput} placeholder='Пароль' className={cn('pr-12', className)} {...props} ref={refClear} />
-			{typeInput == 'password' ? (
+		<div className={cn('relative w-full', className)} ref={ref}>
+			<Input type={typeInput} placeholder='Пароль' className='pr-12' {...props} ref={refClear} />
+			{typeInput === 'password' ? (
 				<FaEye onClick={changeType} className='absolute right-3 top-2/4 -translate-y-1/2 cursor-pointer' />
 			) : (
 				<FaEyeSlash onClick={changeType} className='absolute right-3 top-2/4 -translate-y-1/2 cursor-pointer' />
