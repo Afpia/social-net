@@ -1,9 +1,9 @@
 import { forwardRef, MutableRefObject, useRef, useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { RxCross2 } from 'react-icons/rx'
+import { Input, InputProps } from '@UI'
 
-import { cn } from '@/lib/utils'
-import { Input, InputProps } from '@/UI/Input'
+import { cn } from '@utils/cn'
 
 type input = 'password' | 'text'
 

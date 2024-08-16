@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
+import { LoginForm } from '@modules/login-form'
+
 // import video from '../../assets/video/animation.mp4'
-import { LoginForm } from '@/modules/login-form/LoginForm'
 
 export const Login: FC = () => (
 	<div className='flex justify-between'>

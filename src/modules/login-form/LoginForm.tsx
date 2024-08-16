@@ -1,45 +1,33 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-import * as yup from 'yup'
-
 // import { useNavigate } from 'react-router-dom'
-// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { Button, Input, Label } from '@UI'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
+import { InputPassword } from '@components/input-password'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { InputPassword } from '@/components/input-password/InputPassword'
-import { Button } from '@/UI/Button'
-import { Input } from '@/UI/Input'
-import { Label } from '@/UI/Label'
-
-export interface form {
-	email: string
-	password: string
-}
-
-const schema = yup
-	.object({
-		email: yup.string().email('Email должен быть действительным').trim().required('Обязательное поле'),
-		password: yup.string().min(3, 'Минимальная длина 3 символа').required('Обязательное поле')
-	})
-	.required()
+import { Form, LoginSchema } from './LoginSchema'
 
 export const LoginForm = () => {
+	const auth = getAuth()
+	// const navigate = useNavigate()
 	const {
 		handleSubmit,
 		register,
-		formState: { errors }
-	} = useForm<form>({
+		formState: { errors, isSubmitting }
+	} = useForm<Form>({
 		mode: 'onTouched',
-		resolver: yupResolver(schema)
+		resolver: yupResolver(LoginSchema)
 	})
-	console.log(errors)
-	// const navigate = useNavigate()
 
-	const submit: SubmitHandler<form> = async data => {
-		// const auth = getAuth()
-		// const response = await signInWithEmailAndPassword(auth, data.email, data.password)
-
-		// navigate('/', { replace: true })
-		console.log(data)
+	const submit: SubmitHandler<Form> = async data => {
+		try {
+			const { user } = await signInWithEmailAndPassword(auth, data.email, data.password)
+			console.log(user)
+			// navigate('/', { replace: true })
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 	return (
@@ -51,24 +39,26 @@ export const LoginForm = () => {
 				id='email'
 				type='text'
 				placeholder='Почта'
-				className='mb-3'
+				className='mb-1'
 				{...register('email')}
 				error={Boolean(errors.email?.message)}
+				disabled={isSubmitting}
 			/>
-			{errors.email?.message && <p className='mb-3 w-full'>{errors.email?.message}</p>}
+			{errors.email?.message && <p className='w-full text-sm text-red'>{errors.email?.message}</p>}
 
-			<Label htmlFor='password' className='w-full pb-2 font-semibold'>
+			<Label htmlFor='password' className='w-full pb-2 pt-3 font-semibold'>
 				Пароль
 			</Label>
 			<InputPassword
 				id='password'
-				className='mb-3'
+				className='mb-1'
 				{...register('password')}
 				error={Boolean(errors.password?.message)}
+				disabled={isSubmitting}
 			/>
-			{errors.password?.message && <p className='w-full'>{errors.password?.message}</p>}
+			{errors.password?.message && <p className='w-full text-sm text-red'>{errors.password?.message}</p>}
 
-			<Button className='mb-6 mt-5 w-full' type='submit'>
+			<Button className='mb-6 mt-5 w-full' type='submit' loading={isSubmitting}>
 				Войти
 			</Button>
 		</form>

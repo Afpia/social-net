@@ -3,17 +3,14 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
-
-import { form } from '../login-form/LoginForm'
+import { Form } from 'modules/login-form/LoginSchema'
 
 type input = 'password' | 'text'
-
-export let authAccess = false
 
 export const SignupForm = () => {
 	const [typeInput, setTypeInput] = useState<input>('password')
 
-	const { register, handleSubmit } = useForm<form>()
+	const { register, handleSubmit } = useForm<Form>()
 
 	const navigate = useNavigate()
 
@@ -22,12 +19,11 @@ export const SignupForm = () => {
 		setTypeInput('password')
 	}
 
-	const submit: SubmitHandler<form> = async data => {
+	const submit: SubmitHandler<Form> = async data => {
 		console.log(data)
 		const auth = getAuth()
 		const response = await createUserWithEmailAndPassword(auth, data.email, data.password)
 		console.log(response)
-		authAccess = true
 		navigate('/', { replace: true })
 	}
 

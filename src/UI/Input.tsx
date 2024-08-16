@@ -1,7 +1,7 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 import { cva } from 'class-variance-authority'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@utils/cn'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	disabled?: boolean

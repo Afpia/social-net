@@ -1,13 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Chat, Login, NotFound, SignUp } from '@pages'
+
+import { LayoutChat } from '@components/layouts'
+import { ROUTES } from '@constants/routes'
 
 import { PrivateRouter } from './PrivateRouter'
-
-import { LayoutChat } from '@/components/layouts/LayoutChat'
-import { ROUTES } from '@/constants/routes'
-import { Chat } from '@/pages/chat/Chat'
-import { Login } from '@/pages/log-in/Login'
-import { NotFound } from '@/pages/not-found/NotFound'
-import { SignUp } from '@/pages/sign-up/Signup'
 
 const router = createBrowserRouter([
 	{

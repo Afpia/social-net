@@ -23,11 +23,14 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 
-		//
-
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@pages": ["./pages"],
+			"@components/*": ["./components/*"],
+			"@constants/*": ["./constants/*"],
+			"@UI": ["./UI"],
+			"@utils/*": ["./utils/*"],
+			"@modules/*": ["./modules/*"]
 		}
 	},
 	"include": ["src"]

@@ -1,7 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-import { ROUTES } from '@/constants/routes'
-// import { authAccess } from '@/modules/login-form/LoginForm'
+import { ROUTES } from '@constants/routes'
 
 export const PrivateRouter = () => {
 	const auth = false
