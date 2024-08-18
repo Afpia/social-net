@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { Button, Input, Label } from '@UI'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
-import { InputPassword } from '@components/input-password'
+import { InputPassword } from '@components/InputPassword'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 import { Form, LoginSchema } from './LoginSchema'

@@ -3,7 +3,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
-import { Form } from 'modules/login-form/LoginSchema'
+
+import { Form } from '@modules/LoginForm/LoginSchema'
 
 type input = 'password' | 'text'
 

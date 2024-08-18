@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { RxCross2 } from 'react-icons/rx'
 import { Input, InputProps } from '@UI'
 
-import { cn } from '@utils/cn'
+import { cn } from '@utils/helpers/cn'
 
 type input = 'password' | 'text'
 

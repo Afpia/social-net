@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { LoginForm } from '@modules/login-form'
+import { LoginForm } from '@modules/LoginForm'
 
 // import video from '../../assets/video/animation.mp4'
 

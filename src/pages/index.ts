@@ -1,4 +1,4 @@
-export { Chat } from './chat/Chat'
-export { Login } from './log-in/Login'
-export { NotFound } from './not-found/NotFound'
-export { SignUp } from './sign-up/Signup'
+export { Chat } from './Chat/Chat'
+export { Login } from './Login/Login'
+export { NotFound } from './NotFound/NotFound'
+export { SignUp } from './Signup/Signup'

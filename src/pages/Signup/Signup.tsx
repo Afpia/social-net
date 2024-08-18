@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { SignupForm } from '@modules/signup-form/SignupForm'
+import { SignupForm } from '@modules/SignupForm/SignupForm'
 
 export const SignUp = () => (
 	<div className='absolute left-2/4 top-2/4 -translate-x-3/4 -translate-y-3/4'>

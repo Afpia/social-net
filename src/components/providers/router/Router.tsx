@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Chat, Login, NotFound, SignUp } from '@pages'
 
-import { LayoutChat } from '@components/layouts'
-import { ROUTES } from '@constants/routes'
+import { LayoutChat } from '@components/layout'
+import { ROUTES } from '@utils/constants/ROUTES'
 
 import { PrivateRouter } from './PrivateRouter'
 

@@ -1,2 +1,2 @@
-export * from './router'
-export * from './theme'
+export { Router } from './Router'
+export { ThemeProvider } from './Theme'

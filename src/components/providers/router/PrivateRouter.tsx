@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-import { ROUTES } from '@constants/routes'
+import { ROUTES } from '@utils/constants/ROUTES'
 
 export const PrivateRouter = () => {
 	const auth = false
