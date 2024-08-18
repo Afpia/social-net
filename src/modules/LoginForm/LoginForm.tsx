@@ -1,16 +1,20 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button, Input, Label } from '@UI'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 import { InputPassword } from '@components/InputPassword'
+import { useAuth } from '@components/providers/Auth'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 import { Form, LoginSchema } from './LoginSchema'
 
 export const LoginForm = () => {
 	const auth = getAuth()
-	// const navigate = useNavigate()
+	const navigate = useNavigate()
+
+	const { setSession } = useAuth()
+
 	const {
 		handleSubmit,
 		register,
@@ -23,10 +27,12 @@ export const LoginForm = () => {
 	const submit: SubmitHandler<Form> = async data => {
 		try {
 			const { user } = await signInWithEmailAndPassword(auth, data.email, data.password)
-			console.log(user)
-			// navigate('/', { replace: true })
+
+			// TODO: исправить типизацию
+			setSession({ isLogin: true, userId: user.uid, accessToken: user.accessToken })
+			navigate('/', { replace: true })
 		} catch (error) {
-			console.log(error)
+			alert(error)
 		}
 	}
 
